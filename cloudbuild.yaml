@@ -3,7 +3,7 @@ steps:
     args:
       - build
       - '-t'
-      - '$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME-blog:$COMMIT_SHA'
+      - '$_GCR_HOSTNAME/$PROJECT_ID/shortlog-blog:$COMMIT_SHA'
       - blog
       - '-f'
       - blog/Dockerfile
@@ -11,7 +11,7 @@ steps:
   - name: gcr.io/cloud-builders/docker
     args:
       - push
-      - '$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME-blog:$COMMIT_SHA'
+      - '$_GCR_HOSTNAME/$PROJECT_ID/shortlog-blog:$COMMIT_SHA'
     id: Push
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     args:
@@ -20,13 +20,13 @@ steps:
       - update
       - $_SERVICE_NAME
       - '--platform=managed'
-      - '--image=$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME-blog:$COMMIT_SHA'
+      - '--image=$_GCR_HOSTNAME/$PROJECT_ID/shortlog-blog:$COMMIT_SHA'
       - '--region=$_DEPLOY_REGION'
       - '--quiet'
     id: Deploy
     entrypoint: gcloud
 images:
-  - '$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME-blog:$COMMIT_SHA'
+  - '$_GCR_HOSTNAME/$PROJECT_ID/shortlog-blog:$COMMIT_SHA'
 options:
   substitutionOption: ALLOW_LOOSE
 substitutions:
