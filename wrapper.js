@@ -10,4 +10,6 @@ process.env["storage__ghost-storage-github__baseUrl"] =
 process.env["storage__ghost-storage-github__useRelativeUrls"] =
   process.env.GITHUB_USERELATIVEURLS;
 
+process.env["server__port"] = process.env.PORT || 8080;
+
 require("./index.js");
