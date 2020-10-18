@@ -4,6 +4,7 @@ steps:
       - build
       - '-t'
       - '$_GCR_HOSTNAME/$PROJECT_ID/shortlog-blog:$COMMIT_SHA'
+      - .
       - '-f'
       - Dockerfile
     id: Build
