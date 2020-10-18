@@ -17,9 +17,13 @@ WORKDIR /var/lib/ghost
 
 RUN npm i dtrace-provider ghost-ignition ghost-storage-github
 
-RUN mkdir -p content.orig/adapters/storage && \
-    cp -r node_modules/ghost-storage-github content.orig/adapters/storage/ghost-storage-github
+#RUN mkdir -p content.orig/adapters/storage && \
+#    cp -r node_modules/ghost-storage-github content.orig/adapters/storage/ghost-storage-github
 
+RUN mkdir -p content/adapters/storage && \
+    cp -r node_modules/ghost-storage-github content/adapters/storage/ghost-storage-github
+
+COPY ./content/* ./content/
 COPY ./wrapper.js ./current/wrapper.js
 
 ENV url http://localhost:2368
