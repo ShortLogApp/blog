@@ -4,9 +4,8 @@ steps:
       - build
       - '-t'
       - '$_GCR_HOSTNAME/$PROJECT_ID/shortlog-blog:$COMMIT_SHA'
-      - blog
       - '-f'
-      - blog/Dockerfile
+      - Dockerfile
     id: Build
   - name: gcr.io/cloud-builders/docker
     args:
