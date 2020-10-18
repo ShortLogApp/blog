@@ -20,12 +20,17 @@ RUN npm i dtrace-provider ghost-ignition ghost-storage-github
 RUN mkdir -p content.orig/adapters/storage && \
     cp -r node_modules/ghost-storage-github content.orig/adapters/storage/ghost-storage-github
 
+COPY ./wrapper.js ./current/wrapper.js
+
 ENV url http://localhost:2368
-ENV storage__active ghost-storage-github
-ENV storage__ghost-storage-github__token CHANGEME-token
-ENV storage__ghost-storage-github__owner CHANGEME-owner
-ENV storage__ghost-storage-github__repo CHANGEME-repo
-ENV storage__ghost-storage-github__branch CHANGEME-branch
-ENV storage__ghost-storage-github__destination CHANGEME-destination
-ENV storage__ghost-storage-github__baseUrl CHANGEME-baseUrl
-ENV storage__ghost-storage-github__useRelativeUrls false
+
+ENV GITHUB_TOKEN CHANGEME-token
+ENV GITHUB_OWNER CHANGEME-owner
+ENV GITHUB_REPO CHANGEME-repo
+ENV GITHUB_BRANCH CHANGEME-branch
+ENV GITHUB_DESTINATION CHANGEME-destination
+ENV GITHUB_BASEURL CHANGEME-baseUrl
+ENV GITHUB_USERELATIVEURLS false
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["node", "current/wrapper.js"]
