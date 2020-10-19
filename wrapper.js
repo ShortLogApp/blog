@@ -1,14 +1,5 @@
 process.env["server__port"] = process.env.PORT || 8080;
-process.env["storage__active"] = "ghost-storage-github";
-process.env["storage__ghost-storage-github__token"] = process.env.GITHUB_TOKEN;
-process.env["storage__ghost-storage-github__repo"] = process.env.GITHUB_REPO;
-process.env["storage__ghost-storage-github__branch"] =
-  process.env.GITHUB_BRANCH;
-process.env["storage__ghost-storage-github__destination"] =
-  process.env.GITHUB_DESTINATION;
-process.env["storage__ghost-storage-github__baseUrl"] =
-  process.env.GITHUB_BASEURL;
-process.env["storage__ghost-storage-github__useRelativeUrls"] =
-  process.env.GITHUB_USERELATIVEURLS;
+process.env["storage__active"] = "gcs";
+process.env["storage__gcs__bucket"] = process.env.GCS_BUCKET;
 
-require("./index.js");
+require("./origIndex.js");

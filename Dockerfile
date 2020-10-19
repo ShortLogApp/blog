@@ -15,26 +15,17 @@ RUN apk add --no-cache python3 make sudo && \
 
 WORKDIR /var/lib/ghost
 
-RUN npm i dtrace-provider ghost-ignition ghost-storage-github
+RUN npm i dtrace-provider ghost-ignition ghost-v3-google-cloud-storage
 
 #RUN mkdir -p content.orig/adapters/storage && \
 #    cp -r node_modules/ghost-storage-github content.orig/adapters/storage/ghost-storage-github
 
-RUN mkdir -p content/adapters/storage && \
-    cp -r node_modules/ghost-storage-github content/adapters/storage/ghost-storage-github
+RUN mkdir -p content.orig/adapters/storage/gcs && \
+    mv node_modules/ghost-v3-google-cloud-storage/* content.orig/adapters/storage/gcs/
 
-COPY ./content/* ./content/
-COPY ./wrapper.js ./current/wrapper.js
+RUN mv ./current/index.js ./current/origIndex.js
+COPY ./wrapper.js ./current/index.js
 
 ENV url http://localhost:2368
 
-ENV GITHUB_TOKEN CHANGEME-token
-ENV GITHUB_OWNER CHANGEME-owner
-ENV GITHUB_REPO CHANGEME-repo
-ENV GITHUB_BRANCH CHANGEME-branch
-ENV GITHUB_DESTINATION CHANGEME-destination
-ENV GITHUB_BASEURL CHANGEME-baseUrl
-ENV GITHUB_USERELATIVEURLS false
-
-ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["node", "current/wrapper.js"]
+ENV GCS_BUCKET CHANGEME-bucket
