@@ -71,6 +71,12 @@ RUN mv ./current/index.js ./current/origIndex.js
 COPY ./wrapper.js ./current/index.js
 COPY ./content content
 
+#ENV fizzy_shasum "a92ca99e0697de226a0315ec636dc62a5de6e324fffdece3935aec348696f587  v1.3.0.tar.gz"
+#RUN cd content/themes/ && \
+#    wget https://github.com/huangyuzhang/Fizzy-Theme/archive/v1.3.0.tar.gz && \
+#    echo "$fizzy_shasum" | sha256sum -c && \
+#    tar -xzf v1.3.0.tar.gz
+
 ENV url http://localhost:2368
 
 ENV GCS_BUCKET CHANGEME-bucket
