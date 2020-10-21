@@ -2,15 +2,15 @@
 Theme Name: Fizzy
 GitHub Repo: https://github.com/huangyuzhang/Fizzy-Theme
 Version: 1.3.0
-Description: A tasty blogging theme for Ghost 
+Description: A tasty blogging theme for Ghost
 Author: Yuzhang Huang
 Author URI: https://yuzhang.me
 */
 
 /* ====================== import ====================== */
 /* Customized CSS ADD 2019.05.28*/
-@import "custom.css"; 
-@import "class.css"; 
+@import "custom.css";
+@import "class.css";
 @import "iconfont.css"; /* ADD 2019.09.25 */
 
 /* ====================== over-write bulma default ====================== */
@@ -92,12 +92,12 @@ strong{
 }
 
 /* fizzy credit button */
-.btn-fizzy{
+.btn-fizzy:hover {
 	background: linear-gradient(60deg,#fd5d5c, #7504dc);
-	border-radius:6px;
+    color: white;
 }
 .btn-fizzy-inner{
-	background-color:#fff;
+	/*background-color:#fff;*/
 	margin: 1px;
     padding: 5px 12px;
 	border-radius:5px;
@@ -219,21 +219,21 @@ h1, h2, h3, h4, h5, h6, .is-montserrat{
 	-apple-system,
 	BlinkMacSystemFont,
 	"PingFang SC",
-	"Heiti SC", 
-	"STXihei", 
+	"Heiti SC",
+	"STXihei",
 	"Microsoft YaHei",
 	sans-serif;
 }
 .is-georgia {
-	font-family: 
-	Georgia, 
-	-apple-system, 
+	font-family:
+	Georgia,
+	-apple-system,
 	BlinkMacSystemFont,
 	'Segoe UI',
-	"PingFang SC", 
-	"Microsoft YaHei", 
-	"Heiti SC", 
-	"STXihei", 
+	"PingFang SC",
+	"Microsoft YaHei",
+	"Heiti SC",
+	"STXihei",
 	sans-serif !important;
 }
 /* ====================== body ====================== 2019.04.11 */
@@ -320,7 +320,7 @@ html,body{
 }
 .carousel .carousel-item {
 	overflow: hidden;
-	position: relative; 
+	position: relative;
 	height:22.5rem;
 	padding:0!important;
 	background-color:#fff !important; /* added background color as placeholder*/
@@ -373,7 +373,7 @@ html,body{
 	background:unset;
 }
 .tf-item {
-	position: relative; 
+	position: relative;
 	overflow: hidden;
 	height:10.5rem;
 	margin-bottom:1.5rem;
@@ -460,7 +460,7 @@ html,body{
     	right: 20px;
 		height: 24px;
     	line-height: 24px;
-	}	
+	}
 }
 
 /* showcase 2019.05.30 */
@@ -477,7 +477,7 @@ html,body{
 
 /* remove box border-radius in mobile device 2019.04.11 */
 @media screen and (max-width: 768px){
-	.single-article .box {border-radius: 0;} 
+	.single-article .box {border-radius: 0;}
 }
 .single-article .featured-image {
     height: 400px;
@@ -496,7 +496,7 @@ html,body{
 .featured-image .featured-label{
 	bottom:10px;
 	right:10px;
-} 
+}
 
 /* default style for post content */
 .single-article .post-wrap {
@@ -972,7 +972,7 @@ table tr td:last-child {border-right: solid 1px #dbdbdb;}
     	right: 10px;
 		height: 24px;
     	line-height: 24px;
-	}	
+	}
 }
 /* aside: tag list card */
 .aside .tag-list {
@@ -993,7 +993,7 @@ table tr td:last-child {border-right: solid 1px #dbdbdb;}
 .aside .tag-list-header-topic {
 	padding: 0.5rem;
 }
-.aside .tag-list-content { 
+.aside .tag-list-content {
 	height:100%;
 	position: relative;
     z-index: 50;
@@ -1127,8 +1127,8 @@ ul.post-archive{margin-left:0!important;line-height:2 !important;}
 				 -apple-system,
 				 BlinkMacSystemFont,
 				 "PingFang SC",
-				 "Heiti SC", 
-				 "STXihei", 
+				 "Heiti SC",
+				 "STXihei",
 				 "Microsoft YaHei",
 				 sans-serif !important;
 }
@@ -1143,8 +1143,8 @@ ul.post-archive{margin-left:0!important;line-height:2 !important;}
 				 -apple-system,
 				 BlinkMacSystemFont,
 				 "PingFang SC",
-				 "Heiti SC", 
-				 "STXihei", 
+				 "Heiti SC",
+				 "STXihei",
 				 "Microsoft YaHei";
 }
 .post-archive-item .authors,.post-archive-item .authors a{
@@ -1171,7 +1171,7 @@ ul.post-archive{margin-left:0!important;line-height:2 !important;}
 	color:#666;
 	word-break: break-word;
 	transition: all .25s;
-    
+
 }
 .declare a:hover {
 	color: var(--link-color-hover);
@@ -1221,7 +1221,7 @@ ul.post-archive{margin-left:0!important;line-height:2 !important;}
 .kg-bookmark-card a:hover {
 	color: black !important;
 }
-.kg-bookmark-content {    
+.kg-bookmark-content {
 	flex-basis: 0;
 	flex-grow: 999;
 	min-width: 50%;
@@ -1234,8 +1234,8 @@ ul.post-archive{margin-left:0!important;line-height:2 !important;}
 				 -apple-system,
 				 BlinkMacSystemFont,
 				 "PingFang SC",
-				 "Heiti SC", 
-				 "STXihei", 
+				 "Heiti SC",
+				 "STXihei",
 				 "Microsoft YaHei",
 				 sans-serif;
 }
@@ -1264,7 +1264,7 @@ ul.post-archive{margin-left:0!important;line-height:2 !important;}
 .kg-bookmark-card:hover figcaption{
 	text-shadow: 0 2px 6px rgba(12,12,94,.3) !important;
 }
-.kg-bookmark-description{ 
+.kg-bookmark-description{
 	color: #666;
 }
 .kg-bookmark-description,
@@ -1281,15 +1281,15 @@ ul.post-archive{margin-left:0!important;line-height:2 !important;}
 .kg-bookmark-thumbnail {
 	flex-basis: 10rem;
 	flex-grow: 1;
-    position: relative; 
-    min-width: 10rem; 
+    position: relative;
+    min-width: 10rem;
     max-height: 100%;
 }
 .kg-bookmark-thumbnail img {
 	vertical-align: bottom;
 	object-fit: cover;
 	width: 100%;
-	height:100%; 
+	height:100%;
     position: absolute;
     top: 0;
     left: 0;

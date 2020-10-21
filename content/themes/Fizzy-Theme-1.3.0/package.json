@@ -15,7 +15,9 @@
         "theme",
         "ghost-theme"
     ],
-    "dependencies": {},
+    "dependencies": {
+        "gulp": "^4.0.2"
+    },
     "config": {
         "posts_per_page": 8,
         "image_sizes": {
